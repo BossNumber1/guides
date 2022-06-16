@@ -1,0 +1,114 @@
+@mixin selectArea {
+    border: 1px solid gray;
+}
+
+@mixin textCentering {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: 17% 96.5% 1%;
+    grid-gap: 1em;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+// header
+.header {
+    // @include selectArea;
+    @include textCentering;
+    grid-area: header;
+
+    &__content {
+        .header__title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .header__benefit {
+            font-size: 11px;
+        }
+    }
+}
+
+// main
+.main {
+    // @include selectArea;
+    grid-area: main;
+    margin: 13px;
+
+    &__title {
+        // @include selectArea;
+        @include textCentering;
+        font-size: 11px;
+        color: gray;
+        // font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+    .paragraph {
+        @include selectArea;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        background-color: #f1f1f1;
+        padding: 10px 10px 1px 10px;
+        font-size: 14px;
+    }
+
+    .paragraph_noCode {
+        padding: 10px 10px 8px 10px;
+    }
+
+    .command {
+        display: flex;
+        align-items: center;
+
+        .monospace input {
+            border: none;
+            pointer-events: none;
+            margin: 10px 0 10px 14px;
+            color: white;
+            background-color: green;
+            opacity: 0.6;
+            border-radius: 12px;
+            width: max-content;
+            padding: 5px 10px;
+        }
+    }
+    &__source {
+        // @include selectArea;
+        @include textCentering;
+        padding: 20px 10px 10px;
+        font-size: 12px;
+        font-style: italic;
+
+        a {
+            margin-left: 5px;
+        }
+    }
+}
+
+// footer
+.footer {
+    // @include selectArea;
+    @include textCentering;
+    grid-area: footer;
+
+    &__signature {
+        font-size: 12px;
+        opacity: 0.6;
+    }
+}
