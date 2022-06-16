@@ -1,5 +1,3 @@
-import React from "react";
-
 function Paragraph({ introduction, command, commandNumber }) {
     return (
         <div className={command ? "paragraph" : "paragraph paragraph_noCode"}>
