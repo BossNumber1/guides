@@ -14,6 +14,10 @@ function Main() {
         },
         {
             index: 2,
+            introduction: `2. Включаем Docker`,
+        },
+        {
+            index: 3,
             introduction: `3. Переходим в папку с приложением и создаём Dockerfile.prod со
                 следующей структурой:`,
             command: ` FROM node as build
@@ -37,7 +41,7 @@ function Main() {
             commandNumber: 1,
         },
         {
-            index: 3,
+            index: 4,
             introduction: `4. Создаём рядом Dockerfile.dev со следующим содержимым:`,
             command: `FROM node
                     <br />
@@ -56,7 +60,7 @@ function Main() {
             commandNumber: 2,
         },
         {
-            index: 4,
+            index: 5,
             introduction: `5. Теперь по соседству делаем файл .env:`,
             command: `CHOKIDAR_USEPOLLING=true
                     <br />
@@ -64,7 +68,7 @@ function Main() {
             commandNumber: 3,
         },
         {
-            index: 5,
+            index: 6,
             introduction: `6. Аналогично - docker-compose-dev.yml:`,
             command: `version: '3.8'
                     <br />
@@ -92,7 +96,7 @@ function Main() {
             commandNumber: 4,
         },
         {
-            index: 6,
+            index: 7,
             introduction: `7. Рядышком - docker-compose-prod.yml:`,
             command: `version: '3.8'
                     <br />
@@ -114,7 +118,7 @@ function Main() {
             commandNumber: 5,
         },
         {
-            index: 7,
+            index: 8,
             introduction: `8. Туда же - .dockerignore:`,
             command: `node_modules
                     <br />
@@ -130,7 +134,7 @@ function Main() {
             commandNumber: 6,
         },
         {
-            index: 8,
+            index: 9,
             introduction: `9. Теперь, для того чтобы посмотреть как будет в
                 prodakshen-режиме и как в режиме разработки, пропишем в
                 компоненте App.js:`,
@@ -173,25 +177,27 @@ function Main() {
             <MainTitle />
 
             {ParagraphContent.map((el) => {
-                <Paragraph
-                    key={el.index}
-                    introduction={el.introduction}
-                    command={el.command}
-                    commandNumber={el.commandNumber}
-                />;
+                return (
+                    <Paragraph
+                        key={el.index}
+                        introduction={el.introduction}
+                        command={el.command}
+                        commandNumber={el.commandNumber}
+                    />
+                );
             })}
 
-            <div className="paragraph paragraph_noCode">2. Включаем Docker</div>
-
             {AdvancedParagraphContent.map((el) => {
-                <AdvancedParagraph
-                    key={el.index}
-                    introduction={el.introduction}
-                    developerCommand={el.developerCommand}
-                    developerCommandNumber={el.developerCommandNumber}
-                    productionCommand={el.productionCommand}
-                    productionCommandNumber={el.productionCommandNumber}
-                />;
+                return (
+                    <AdvancedParagraph
+                        key={el.index}
+                        introduction={el.introduction}
+                        developerCommand={el.developerCommand}
+                        developerCommandNumber={el.developerCommandNumber}
+                        productionCommand={el.productionCommand}
+                        productionCommandNumber={el.productionCommandNumber}
+                    />
+                );
             })}
 
             <Source />
