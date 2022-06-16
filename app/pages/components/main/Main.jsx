@@ -5,22 +5,18 @@ import Paragraph from "./Paragraph";
 import Source from "./Source";
 
 function Main() {
-    return (
-        <div className="main">
-            <MainTitle />
-
-            <Paragraph
-                introduction={`1. В терминале заходим в пустую созданную для нашего проекта дерикторию. Там вводим:`}
-                command={`npx create-react-app .`}
-                commandNumber="0"
-            />
-
-            <div className="paragraph paragraph_noCode">2. Включаем Docker</div>
-
-            <Paragraph
-                introduction={`3. Переходим в папку с приложением и создаём Dockerfile.prod со
-                следующей структурой:`}
-                command={` FROM node as build
+    const ParagraphContent = [
+        {
+            index: 1,
+            introduction: `1. В терминале заходим в пустую созданную для нашего проекта дерикторию. Там вводим:`,
+            command: `npx create-react-app .`,
+            commandNumber: 0,
+        },
+        {
+            index: 2,
+            introduction: `3. Переходим в папку с приложением и создаём Dockerfile.prod со
+                следующей структурой:`,
+            command: ` FROM node as build
                     <br />
                     WORKDIR /app
                     <br />
@@ -37,13 +33,13 @@ function Main() {
                     <br />
                     FROM nginx
                     <br />
-                    COPY --from=build /app/build /usr/share/nginx/html`}
-                commandNumber="1"
-            />
-
-            <Paragraph
-                introduction={` 4. Создаём рядом Dockerfile.dev со следующим содержимым:`}
-                command={`FROM node
+                    COPY --from=build /app/build /usr/share/nginx/html`,
+            commandNumber: 1,
+        },
+        {
+            index: 3,
+            introduction: `4. Создаём рядом Dockerfile.dev со следующим содержимым:`,
+            command: `FROM node
                     <br />
                     WORKDIR /app
                     <br />
@@ -56,21 +52,21 @@ function Main() {
                     EXPOSE 3000
                     <br />
                     CMD ["npm", "start"]
-                    <br />`}
-                commandNumber="2"
-            />
-
-            <Paragraph
-                introduction={` 5. Теперь по соседству делаем файл .env:`}
-                command={` CHOKIDAR_USEPOLLING=true
+                    <br />`,
+            commandNumber: 2,
+        },
+        {
+            index: 4,
+            introduction: `5. Теперь по соседству делаем файл .env:`,
+            command: `CHOKIDAR_USEPOLLING=true
                     <br />
-                    REACT_APP_NAME=greatdev`}
-                commandNumber="3"
-            />
-
-            <Paragraph
-                introduction={`6. Аналогично - docker-compose-dev.yml:`}
-                command={` version: '3.8'
+                    REACT_APP_NAME=greatdev`,
+            commandNumber: 3,
+        },
+        {
+            index: 5,
+            introduction: `6. Аналогично - docker-compose-dev.yml:`,
+            command: `version: '3.8'
                     <br />
                     services:
                     <br />
@@ -92,13 +88,13 @@ function Main() {
                     environment:
                     <br />
                     - REACT_APP_NAME=greatdev-dev
-                    <br />- CHOKIDAR_USEPOLLING=true`}
-                commandNumber="4"
-            />
-
-            <Paragraph
-                introduction={`7. Рядышком - docker-compose-prod.yml:`}
-                command={`version: '3.8'
+                    <br />- CHOKIDAR_USEPOLLING=true`,
+            commandNumber: 4,
+        },
+        {
+            index: 6,
+            introduction: `7. Рядышком - docker-compose-prod.yml:`,
+            command: `version: '3.8'
                     <br />
                     services:
                     <br />
@@ -114,13 +110,13 @@ function Main() {
                     - REACT_APP_NAME=greatdev-prod
                     <br />
                     ports:
-                    <br />- "8080:80"`}
-                commandNumber="5"
-            />
-
-            <Paragraph
-                introduction={`8. Туда же - .dockerignore:`}
-                command={`node_modules
+                    <br />- "8080:80"`,
+            commandNumber: 5,
+        },
+        {
+            index: 7,
+            introduction: `8. Туда же - .dockerignore:`,
+            command: `node_modules
                     <br />
                     Dockerfile
                     <br />
@@ -130,43 +126,73 @@ function Main() {
                     <br />
                     .dockerignore
                     <br />
-                    .env`}
-                commandNumber="6"
-            />
-
-            <Paragraph
-                introduction={`9. Теперь, для того чтобы посмотреть как будет в
+                    .env`,
+            commandNumber: 6,
+        },
+        {
+            index: 8,
+            introduction: `9. Теперь, для того чтобы посмотреть как будет в
                 prodakshen-режиме и как в режиме разработки, пропишем в
-                компоненте App.js:`}
-                command="<p>{`Hello, ${process.env.REACT_APP_NAME}!`}</p>"
-                commandNumber="7"
-            />
+                компоненте App.js:`,
+            command: "<p>{`Hello, ${process.env.REACT_APP_NAME}!`}</p>",
+            commandNumber: 7,
+        },
+    ];
 
-            <AdvancedParagraph
-                introduction={`10. Чтобы запустить приложение в докере, существует несколько
+    const AdvancedParagraphContent = [
+        {
+            index: 1,
+            introduction: `10. Чтобы запустить приложение в докере, существует несколько
                 вариантов. Я опишу самый короткий. Он заключается в том, чтобы
-                использовать всего-лишь одну команду:`}
-                developerCommand={`docker-compose -f docker-compose-dev.yml up -d --build`}
-                developerCommandNumber="9"
-                productionCommand={`docker-compose -f docker-compose-prod.yml up -d --build`}
-                productionCommandNumber="10"
-            />
+                использовать всего-лишь одну команду:`,
+            developerCommand: `docker-compose -f docker-compose-dev.yml up -d --build`,
+            developerCommandNumber: 9,
+            productionCommand: `docker-compose -f docker-compose-prod.yml up -d --build`,
+            productionCommandNumber: 10,
+        },
+        {
+            index: 2,
+            introduction: `11. Ну и чтобы удалить контейнер, `,
+            developerCommand: `docker-compose -f docker-compose-dev.yml down`,
+            developerCommandNumber: 11,
+            productionCommand: `docker-compose -f docker-compose-prod.yml down`,
+            productionCommandNumber: 12,
+        },
+        {
+            index: 3,
+            introduction: `12. Чтобы удалить образ, `,
+            developerCommand: `docker rmi docker-image-dev`,
+            developerCommandNumber: 13,
+            productionCommand: `docker rmi docker-image-prod`,
+            productionCommandNumber: 14,
+        },
+    ];
 
-            <AdvancedParagraph
-                introduction={`11. Ну и чтобы удалить контейнер, `}
-                developerCommand={`docker-compose -f docker-compose-dev.yml down`}
-                developerCommandNumber="11"
-                productionCommand={`docker-compose -f docker-compose-prod.yml down`}
-                productionCommandNumber="12"
-            />
+    return (
+        <div className="main">
+            <MainTitle />
 
-            <AdvancedParagraph
-                introduction={`12. Чтобы удалить образ, `}
-                developerCommand={`docker rmi docker-image-dev`}
-                developerCommandNumber="13"
-                productionCommand={`docker rmi docker-image-prod`}
-                productionCommandNumber="14"
-            />
+            {ParagraphContent.map((el) => {
+                <Paragraph
+                    key={el.index}
+                    introduction={el.introduction}
+                    command={el.command}
+                    commandNumber={el.commandNumber}
+                />;
+            })}
+
+            <div className="paragraph paragraph_noCode">2. Включаем Docker</div>
+
+            {AdvancedParagraphContent.map((el) => {
+                <AdvancedParagraph
+                    key={el.index}
+                    introduction={el.introduction}
+                    developerCommand={el.developerCommand}
+                    developerCommandNumber={el.developerCommandNumber}
+                    productionCommand={el.productionCommand}
+                    productionCommandNumber={el.productionCommandNumber}
+                />;
+            })}
 
             <Source />
         </div>
