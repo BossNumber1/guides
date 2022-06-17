@@ -158,6 +158,8 @@ function Main() {
             developerCommandNumber: 9,
             productionCommand: `docker-compose -f docker-compose-prod.yml up -d --build`,
             productionCommandNumber: 10,
+            widthContentDeveloper: 337,
+            widthContentProduction: 345,
         },
         {
             index: 2,
@@ -166,6 +168,8 @@ function Main() {
             developerCommandNumber: 11,
             productionCommand: `docker-compose -f docker-compose-prod.yml down`,
             productionCommandNumber: 12,
+            widthContentDeveloper: 301,
+            widthContentProduction: 305,
         },
         {
             index: 3,
@@ -174,6 +178,8 @@ function Main() {
             developerCommandNumber: 13,
             productionCommand: `docker rmi docker-image-prod`,
             productionCommandNumber: 14,
+            widthContentDeveloper: 174,
+            widthContentProduction: 180,
         },
     ];
 
@@ -203,6 +209,8 @@ function Main() {
                         developerCommandNumber={el.developerCommandNumber}
                         productionCommand={el.productionCommand}
                         productionCommandNumber={el.productionCommandNumber}
+                        widthContentDeveloper={el.widthContentDeveloper}
+                        widthContentProduction={el.widthContentProduction}
                     />
                 );
             })}
