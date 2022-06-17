@@ -75,19 +75,8 @@ button {
     .command {
         display: flex;
         align-items: center;
-
-        .monospace input {
-            border: none;
-            pointer-events: none;
-            margin: 10px 0 10px 14px;
-            color: white;
-            background-color: green;
-            opacity: 0.6;
-            border-radius: 12px;
-            width: max-content;
-            padding: 5px 10px;
-        }
     }
+
     &__source {
         // @include selectArea;
         @include textCentering;
@@ -98,6 +87,20 @@ button {
         a {
             margin-left: 5px;
         }
+    }
+
+    textarea {
+        border: none;
+        pointer-events: none;
+        // width: 520px;
+        // height: 230px !important;
+        margin: 10px 0 10px 14px;
+        color: white;
+        background-color: green;
+        opacity: 0.6;
+        border-radius: 12px;
+        width: max-content;
+        padding: 5px 10px;
     }
 }
 
