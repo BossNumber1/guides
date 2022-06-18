@@ -15,12 +15,15 @@ next-route-announcer {
 
 body {
     font-family: "Roboto", sans-serif;
+}
+
+.container {
     display: grid;
     grid-template-areas:
         "header"
         "main"
         "footer";
-    grid-template-rows: 17% 96.5% 1%;
+    grid-template-rows: 100vh max-content max-content;
     grid-gap: 1em;
 }
 

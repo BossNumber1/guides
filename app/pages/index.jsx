@@ -8,9 +8,11 @@ export default function Home() {
         <>
             <DeclarationHeader />
 
-            <Header />
-            <Main />
-            <Footer />
+            <div className="container">
+                <Header />
+                <Main />
+                <Footer />
+            </div>
         </>
     );
 }
