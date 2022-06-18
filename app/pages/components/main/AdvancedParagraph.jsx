@@ -1,11 +1,10 @@
 import React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 function AdvancedParagraph({
     introduction,
     developerCommand,
-    developerCommandNumber,
     productionCommand,
-    productionCommandNumber,
     widthContentDeveloper,
     widthContentProduction,
 }) {
@@ -16,24 +15,28 @@ function AdvancedParagraph({
             <br />- <b>в developer-режиме</b>:
             <div className="monospace">
                 <input
-                    value={developerCommand}
-                    readonly
                     style={{ width: widthContentDeveloper }}
+                    value={developerCommand}
+                    readOnly
                 />
-                <button onclick={`copyCommand('${developerCommandNumber}')`}>
-                    <img src="https://clck.ru/r5L6U" />
-                </button>
+                <CopyToClipboard text={developerCommand}>
+                    <button>
+                        <img src="https://clck.ru/r5L6U" />
+                    </button>
+                </CopyToClipboard>
             </div>
             <br />- <b>в production-режиме</b>:
             <div className="monospace">
                 <input
-                    value={productionCommand}
-                    readonly
                     style={{ width: widthContentProduction }}
+                    value={productionCommand}
+                    readOnly
                 />
-                <button onclick={`copyCommand('${productionCommandNumber}')`}>
-                    <img src="https://clck.ru/r5L6U" />
-                </button>
+                <CopyToClipboard text={productionCommand}>
+                    <button>
+                        <img src="https://clck.ru/r5L6U" />
+                    </button>
+                </CopyToClipboard>
             </div>
         </div>
     );

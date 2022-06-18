@@ -1,3 +1,8 @@
+// без этой комманды данный блок затменяет большую часть страницы
+next-route-announcer {
+    display: none
+}
+
 @mixin selectArea {
     border: 1px solid gray;
 }
