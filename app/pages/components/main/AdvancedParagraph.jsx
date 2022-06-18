@@ -8,6 +8,9 @@ function AdvancedParagraph({
     widthContentDeveloper,
     widthContentProduction,
 }) {
+    const [copiedDevCom, setCopiedDevCom] = React.useState(false);
+    const [copiedProdCom, setCopiedProdCom] = React.useState(false);
+
     return (
         <div className="paragraph">
             {introduction}
@@ -20,8 +23,12 @@ function AdvancedParagraph({
                     readOnly
                 />
                 <CopyToClipboard text={developerCommand}>
-                    <button>
-                        <img src="https://clck.ru/r5L6U" />
+                    <button onClick={() => setCopiedDevCom(true)}>
+                        {copiedDevCom ? (
+                            <img src="https://clck.ru/rYDrr" />
+                        ) : (
+                            <img src="https://clck.ru/r5L6U" />
+                        )}
                     </button>
                 </CopyToClipboard>
             </div>
@@ -33,8 +40,12 @@ function AdvancedParagraph({
                     readOnly
                 />
                 <CopyToClipboard text={productionCommand}>
-                    <button>
-                        <img src="https://clck.ru/r5L6U" />
+                    <button onClick={() => setCopiedProdCom(true)}>
+                        {copiedProdCom ? (
+                            <img src="https://clck.ru/rYDrr" />
+                        ) : (
+                            <img src="https://clck.ru/r5L6U" />
+                        )}
                     </button>
                 </CopyToClipboard>
             </div>
