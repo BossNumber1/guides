@@ -74,6 +74,10 @@ button {
         background-color: #f1f1f1;
         padding: 10px 10px 1px 10px;
         font-size: 14px;
+
+        .monospace {
+            display: flex;
+        }
     }
 
     .paragraph_noCode {
