@@ -95,7 +95,7 @@ function Main() {
         },
         {
             index: 2,
-            introduction: `11. Ну и чтобы удалить контейнер, `,
+            introduction: `11. Чтобы удалить контейнер, `,
             developerCommand: `docker-compose -f docker-compose-dev.yml down`,
             productionCommand: `docker-compose -f docker-compose-prod.yml down`,
             widthContentDeveloper: 301,
@@ -103,7 +103,7 @@ function Main() {
         },
         {
             index: 3,
-            introduction: `12. Чтобы удалить образ, `,
+            introduction: `12. Ну и чтобы удалить образ, `,
             developerCommand: `docker rmi docker-image-dev`,
             productionCommand: `docker rmi docker-image-prod`,
             widthContentDeveloper: 174,
