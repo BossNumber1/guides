@@ -40,24 +40,26 @@ function Main() {
         {
             index: 5,
             introduction: `5. Теперь по соседству делаем файл .env:`,
-            command: [` CHOKIDAR_USEPOLLING=true \n REACT_APP_NAME=greatdev`],
-            heightContent: 33,
-            widthContent: 195,
+            command: [
+                ` CHOKIDAR_USEPOLLING=true \n REACT_APP_NAME=greatdev \n COMPOSE_PROJECT_NAME=image`,
+            ],
+            heightContent: 48,
+            widthContent: 205,
         },
         {
             index: 6,
             introduction: `6. Аналогично - docker-compose-dev.yml:`,
             command: [
-                ` version: '3.8' \n services: \n   react-app: \n     build: \n       context: . \n       dockerfile: Dockerfile.dev \n     ports: \n       - "3000:3000" \n     volumes: \n       - ./src:/app/src \n     environment: \n       - REACT_APP_NAME=greatdev-dev \n       - CHOKIDAR_USEPOLLING=true`,
+                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.dev \n     container_name: container_react_example \n     ports: \n       - "3000:3000" \n     volumes: \n       - ./src:/app/src \n     environment: \n       - REACT_APP_NAME=greatdev-dev \n       - CHOKIDAR_USEPOLLING=true`,
             ],
-            heightContent: 202,
-            widthContent: 280,
+            heightContent: 219,
+            widthContent: 336,
         },
         {
             index: 7,
             introduction: `7. Рядышком - docker-compose-prod.yml:`,
             command: [
-                ` version: '3.8' \n services: \n   react-app: \n     build: \n       context: . \n       dockerfile: Dockerfile.prod \n     args: \n       - REACT_APP_NAME=greatdev-prod \n     ports: \n       - "8080:80"`,
+                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.prod \n     args: \n       - REACT_APP_NAME=greatdev-prod \n     ports: \n       - "8080:80"`,
             ],
             heightContent: 155,
             widthContent: 290,
