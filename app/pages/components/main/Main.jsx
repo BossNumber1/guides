@@ -59,7 +59,7 @@ function Main() {
             index: 7,
             introduction: `7. Рядышком - docker-compose-prod.yml:`,
             command: [
-                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.prod \n     container_name: prod_container_react_example \n     args: \n       - REACT_APP_NAME=greatdev-prod \n     ports: \n       - 8080:80`,
+                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.prod \n       args: \n         - REACT_APP_NAME=greatdev-prod \n     container_name: prod_container_react_example \n     ports: \n       - 8080:80`,
             ],
             heightContent: 171,
             widthContent: 365,
