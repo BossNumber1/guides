@@ -19,23 +19,23 @@ function Main() {
         },
         {
             index: 3,
-            introduction: `3. Переходим в папку с приложением и создаём Dockerfile.prod со
+            introduction: `3. Переходим в папку с приложением и создаём Dockerfile.dev со
                 следующей структурой:`,
-            command: [
-                ` FROM node as build \n WORKDIR /app \n COPY package.json . \n RUN npm install \n COPY . . \n ARG REACT_APP_NAME \n 
- ENV REACT_APP_NAME=$REACT_APP_NAME \n RUN npm run build \n \n FROM nginx \n COPY --from=build /app/build /usr/share/nginx/html`,
-            ],
-            heightContent: 188,
-            widthContent: 383,
-        },
-        {
-            index: 4,
-            introduction: `4. Создаём рядом Dockerfile.dev со следующим содержимым:`,
             command: [
                 ` FROM node \n WORKDIR /app \n COPY package.json . \n RUN npm install \n COPY . . \n ENV REACT_APP_NAME=myName \n EXPOSE 3000 \n CMD ["npm", "start"]`,
             ],
             heightContent: 127,
             widthContent: 204,
+        },
+        {
+            index: 4,
+            introduction: `4. Создаём рядом Dockerfile.prod со следующим содержимым:`,
+            command: [
+                ` FROM node as build \n WORKDIR /app \n COPY package.json . \n RUN npm install \n COPY . . \n ARG REACT_APP_NAME \n 
+ ENV REACT_APP_NAME=$REACT_APP_NAME \n RUN npm run build \n \n FROM nginx \n COPY --from=build /app/build /usr/share/nginx/html`,
+            ],
+            heightContent: 188,
+            widthContent: 380,
         },
         {
             index: 5,
@@ -50,7 +50,7 @@ function Main() {
             index: 6,
             introduction: `6. Аналогично - docker-compose-dev.yml:`,
             command: [
-                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.dev \n     container_name: dev_container_react_example \n     ports: \n       - "3000:3000" \n     volumes: \n       - ./src:/app/src \n     environment: \n       - REACT_APP_NAME=greatdev-dev \n       - CHOKIDAR_USEPOLLING=true`,
+                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.dev \n     container_name: dev_container_react_example \n     ports: \n       - 3000:3000 \n     volumes: \n       - ./src:/app/src \n     environment: \n       - REACT_APP_NAME=greatdev-dev \n       - CHOKIDAR_USEPOLLING=true`,
             ],
             heightContent: 219,
             widthContent: 363,
@@ -59,7 +59,7 @@ function Main() {
             index: 7,
             introduction: `7. Рядышком - docker-compose-prod.yml:`,
             command: [
-                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.prod \n     container_name: prod_container_react_example \n     args: \n       - REACT_APP_NAME=greatdev-prod \n     ports: \n       - "8080:80"`,
+                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.prod \n     container_name: prod_container_react_example \n     args: \n       - REACT_APP_NAME=greatdev-prod \n     ports: \n       - 8080:80`,
             ],
             heightContent: 171,
             widthContent: 365,
