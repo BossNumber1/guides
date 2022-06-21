@@ -96,18 +96,18 @@ function Main() {
         {
             index: 2,
             introduction: `11. Чтобы удалить контейнер, `,
-            developerCommand: `docker-compose -f docker-compose-dev.yml down`,
-            productionCommand: `docker-compose -f docker-compose-prod.yml down`,
-            widthContentDeveloper: 301,
-            widthContentProduction: 305,
+            developerCommand: `docker-compose -p dev_image -f docker-compose-dev.yml down`,
+            productionCommand: `docker-compose -p prod_image -f docker-compose-prod.yml down`,
+            widthContentDeveloper: 383,
+            widthContentProduction: 396,
         },
         {
             index: 3,
             introduction: `12. Ну и чтобы удалить образ, `,
-            developerCommand: `docker rmi docker-image-dev`,
-            productionCommand: `docker rmi docker-image-prod`,
-            widthContentDeveloper: 174,
-            widthContentProduction: 180,
+            developerCommand: `docker rmi dev_image_react_example`,
+            productionCommand: `docker rmi prod_image_react_example`,
+            widthContentDeveloper: 230,
+            widthContentProduction: 234,
         },
     ];
 
