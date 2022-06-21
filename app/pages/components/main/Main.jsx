@@ -31,19 +31,16 @@ function Main() {
             index: 4,
             introduction: `4. Создаём рядом Dockerfile.prod со следующим содержимым:`,
             command: [
-                ` FROM node as build \n WORKDIR /app \n COPY package.json . \n RUN npm install \n COPY . . \n ARG REACT_APP_NAME \n 
- ENV REACT_APP_NAME=$REACT_APP_NAME \n RUN npm run build \n \n FROM nginx \n COPY --from=build /app/build /usr/share/nginx/html`,
+                ` FROM node as build \n WORKDIR /app \n COPY package.json . \n RUN npm install \n COPY . . \n ARG REACT_APP_NAME \n ENV REACT_APP_NAME=$REACT_APP_NAME \n RUN npm run build \n \n FROM nginx \n COPY --from=build /app/build /usr/share/nginx/html`,
             ],
-            heightContent: 188,
+            heightContent: 173,
             widthContent: 380,
         },
         {
             index: 5,
             introduction: `5. Теперь по соседству делаем файл .env:`,
-            command: [
-                ` CHOKIDAR_USEPOLLING=true \n REACT_APP_NAME=greatdev \n COMPOSE_PROJECT_NAME=image`,
-            ],
-            heightContent: 48,
+            command: [` CHOKIDAR_USEPOLLING=true \n REACT_APP_NAME=greatdev`],
+            heightContent: 32,
             widthContent: 205,
         },
         {
@@ -90,10 +87,11 @@ function Main() {
             introduction: `10. Чтобы запустить приложение в докере, существует несколько
                 вариантов. Я опишу самый короткий. Он заключается в том, чтобы
                 использовать всего-лишь одну команду:`,
-            developerCommand: `docker-compose -f docker-compose-dev.yml up -d --build`,
-            productionCommand: `docker-compose -f docker-compose-prod.yml up -d --build`,
-            widthContentDeveloper: 337,
-            widthContentProduction: 345,
+            developerCommand: `docker-compose -p dev_image -f docker-compose-dev.yml up -d --build
+            `,
+            productionCommand: `docker-compose -p prod_image -f docker-compose-prod.yml up -d --build`,
+            widthContentDeveloper: 422,
+            widthContentProduction: 436,
         },
         {
             index: 2,
