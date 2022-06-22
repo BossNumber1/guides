@@ -58,9 +58,9 @@ function Main() {
             index: 7,
             introduction: `7. Туда же - .dockerignore:`,
             command: [
-                ` node_modules \n Dockerfile \n .git \n .gitignore \n .dockerignore \n .env`,
+                ` node_modules \n Dockerfile \n .git \n .gitignore \n .dockerignore`,
             ],
-            heightContent: 95,
+            heightContent: 81,
             widthContent: 115,
         },
         {
