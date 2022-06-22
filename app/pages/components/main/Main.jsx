@@ -87,8 +87,7 @@ function Main() {
             introduction: `10. Чтобы запустить приложение в докере, существует несколько
                 вариантов. Я опишу самый короткий. Он заключается в том, чтобы
                 использовать всего-лишь одну команду:`,
-            developerCommand: `docker-compose -p dev_image -f docker-compose-dev.yml up -d --build
-            `,
+            developerCommand: `docker-compose -p dev_image -f docker-compose-dev.yml up -d --build`,
             productionCommand: `docker-compose -p prod_image -f docker-compose-prod.yml up -d --build`,
             widthContentDeveloper: 422,
             widthContentProduction: 436,
