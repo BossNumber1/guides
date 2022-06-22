@@ -12,6 +12,9 @@ function Footer() {
                 <div data-tooltip="Докеризация NextJS">
                     <img src="https://clck.ru/rcWhq" alt="nextjs icon" />
                 </div>
+                <div data-tooltip="Докеризация Telegram-бота">
+                    <img src="https://clck.ru/rcd7g" alt="telegram icon" />
+                </div>
             </div>
         </div>
     );
