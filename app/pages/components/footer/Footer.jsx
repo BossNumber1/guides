@@ -7,13 +7,13 @@ function Footer() {
 
             <div className="footer__icons">
                 <div data-tooltip="Докеризация ReactJS">
-                    <img src="https://clck.ru/rcVkw" alt="reactjs icon" />
+                    <img src="./pictures/iconReactJS.svg" alt="reactjs icon" />
                 </div>
                 <div data-tooltip="Докеризация NextJS">
-                    <img src="https://clck.ru/rcWhq" alt="nextjs icon" />
+                    <img src="./pictures/iconNextJS.svg" alt="nextjs icon" />
                 </div>
                 <div data-tooltip="Докеризация Telegram-бота">
-                    <img src="https://clck.ru/rcd7g" alt="telegram icon" />
+                    <img src="./pictures/iconTgBot.svg" alt="telegram icon" />
                 </div>
             </div>
         </div>
