@@ -3,6 +3,8 @@ next-route-announcer {
     display: none
 }
 
+$glow: 0 0 20px rgb(190, 186, 186);
+
 @mixin selectArea {
     border: 1px solid gray;
 }
@@ -138,16 +140,29 @@ button {
         @include textCentering;
         margin-left: 20px;
 
-        div {
+        .footer__icon {
             cursor: pointer;
-            margin-right: 10px;
+            // margin-right: 10px;
+             margin-right: 15px;
+            // margin-left: 10px;
+            // opacity: 0.4;
         }
 
-        // img:hover {
-        //     content: "icon"
-        // }
-
-        
+        .footer__icon_active {
+            // opacity: 1;
+            // cursor: default;
+            pointer-events: none;
+            // border: 2px solid #039216;
+            // border-radius: 10px;
+            // cursor: pointer;
+            // margin-right: 10px;
+            border-radius: 10px;
+            margin-right: 20px;
+            margin-left: 10px;
+            -moz-box-shadow: $glow;
+            -webkit-box-shadow: $glow;
+            box-shadow: $glow;
+        }
     }
 }
 
