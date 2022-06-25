@@ -1,18 +1,9 @@
+@import "./common/mixins.scss";  
+@import "./common/variables.scss";  
+
 // без этой комманды данный блок затменяет большую часть страницы
 next-route-announcer {
     display: none
-}
-
-$glow: 0 0 20px rgb(190, 186, 186);
-
-@mixin selectArea {
-    border: 1px solid gray;
-}
-
-@mixin textCentering {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 body {

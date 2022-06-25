@@ -1,0 +1,46 @@
+@import "../common/mixins.scss";  
+@import "../common/variables.scss";  
+
+.container {
+    @include selectArea;
+    // @include textCentering;
+    height: 96.5vh;
+
+    display: grid;
+
+    // grid-template-areas: 
+    //     "card card"
+    //     "card card"; 
+
+    // grid-template-columns: 70% 0%;
+    grid-template-rows: max-content max-content;
+
+    /* grid-auto-rows: minmax(20%, auto); */
+    grid-gap: 1em;
+
+    /* Каждый контейнер имеет размер 200px на 200px */
+//   grid-template-rows: minmax(70%, auto) minmax(70%, auto);
+//   grid-template-columns: minmax(70%, auto) minmax(70%, auto);
+
+  /* ! */
+  justify-items: center;
+
+  .container__row:nth-child(1) {
+    margin-top: 150px;
+  }
+
+&__row {
+    @include textCentering;
+    //  @include selectArea;
+.container__card {
+        @include selectArea;
+        @include textCentering;
+        // grid-area: card;
+        width: 100px;
+        height: 100px;
+        // margin: 20px;
+        margin: 0 20px;
+    }
+}
+    
+}

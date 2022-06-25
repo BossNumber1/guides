@@ -1,0 +1,9 @@
+@mixin selectArea {
+    border: 1px solid gray;
+}
+
+@mixin textCentering {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
