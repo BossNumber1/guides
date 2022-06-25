@@ -1,6 +1,3 @@
-// import Footer from "./components/footer/Footer";
-// import Header from "./components/Header";
-// import Main from "./components/main/Main";
 import DeclarationHeader from "./DeclarationHeader";
 import styles from "../styles/home/home.module.scss";
 
@@ -22,12 +19,6 @@ export default function Home() {
                     <div className={styles.container__card}>4</div>
                 </div>
             </div>
-
-            {/* <div className="container">
-                <Header />
-                <Main />
-                <Footer />
-            </div> */}
         </>
     );
 }
