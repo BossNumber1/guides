@@ -65,10 +65,10 @@ function Main() {
             index: 8,
             introduction: `8. Туда же - .dockerignore:`,
             command: [
-                ` node_modules \n Dockerfile.dev \n Dockerfile.prod \n .git \n .gitignore \n .dockerignore`,
+                ` node_modules \n Dockerfile.dev \n Dockerfile.prod \n docker-compose-dev.yml \n docker-compose-prod.yml \n .git \n .gitignore \n .dockerignore`,
             ],
-            heightContent: 94,
-            widthContent: 125,
+            heightContent: 126,
+            widthContent: 184,
         },
         {
             index: 9,
