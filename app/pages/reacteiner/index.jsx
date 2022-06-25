@@ -15,7 +15,7 @@ function Reacteiner() {
             <div className="container">
                 <Header title="Докеризация ReactJS-приложения" />
                 <Main />
-                <Footer />
+                <Footer numberIconActive="0" />
             </div>
         </>
     );

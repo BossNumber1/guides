@@ -15,7 +15,7 @@ function Nexteiner() {
             <div className="container">
                 <Header title="Докеризация NextJS-приложения" />
                 <Main />
-                <Footer />
+                <Footer numberIconActive="1" />
             </div>
         </>
     );
