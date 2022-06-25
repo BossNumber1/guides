@@ -29,7 +29,7 @@ function Main() {
             introduction: `4. Переходим в папку с приложением и создаём Dockerfile.dev со
                 следующей структурой:`,
             command: [
-                ` FROM node \n WORKDIR /app \n COPY package.json . \n RUN npm install \n COPY . . \n ARG REACT_APP_NAME \n ENV REACT_APP_NAME=$REACT_APP_NAME \n EXPOSE 3000 \n CMD ["npm", "start"]`,
+                ` FROM node \n WORKDIR /app \n COPY package.json . \n RUN npm install \n COPY . . \n ARG MODE_TYPE \n ENV MODE_TYPE=$MODE_TYPE \n EXPOSE 3000 \n CMD ["npm", "start"]`,
             ],
             heightContent: 140,
             widthContent: 261,
@@ -38,7 +38,7 @@ function Main() {
             index: 5,
             introduction: `5. Создаём рядом Dockerfile.prod со следующим содержимым:`,
             command: [
-                ` FROM node as build \n WORKDIR /app \n COPY package.json . \n RUN npm install \n COPY . . \n ARG REACT_APP_NAME \n ENV REACT_APP_NAME=$REACT_APP_NAME \n RUN npm run build \n \n FROM nginx \n COPY --from=build /app/build /usr/share/nginx/html`,
+                ` FROM node as build \n WORKDIR /app \n COPY package.json . \n RUN npm install \n COPY . . \n ARG MODE_TYPE \n ENV MODE_TYPE=$MODE_TYPE \n RUN npm run build \n \n FROM nginx \n COPY --from=build /app/build /usr/share/nginx/html`,
             ],
             heightContent: 173,
             widthContent: 380,
@@ -47,7 +47,7 @@ function Main() {
             index: 6,
             introduction: `6. Аналогично - docker-compose-dev.yml:`,
             command: [
-                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.dev \n       args:  \n         - REACT_APP_NAME=greatdev-dev \n     container_name: dev_container_react_example \n     ports: \n       - 3000:3000 \n     volumes: \n       - ./src:/app/src`,
+                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.dev \n       args:  \n         - MODE_TYPE=development-mode \n     container_name: dev_container_react_example \n     ports: \n       - 3000:3000 \n     volumes: \n       - ./src:/app/src`,
             ],
             heightContent: 203,
             widthContent: 363,
@@ -56,7 +56,7 @@ function Main() {
             index: 7,
             introduction: `7. Рядышком - docker-compose-prod.yml:`,
             command: [
-                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.prod \n       args: \n         - REACT_APP_NAME=greatdev-prod \n     container_name: prod_container_react_example \n     ports: \n       - 80:80`,
+                ` version: '3.8' \n services: \n   react_example: \n     build: \n       context: . \n       dockerfile: Dockerfile.prod \n       args: \n         - MODE_TYPE=production-mode \n     container_name: prod_container_react_example \n     ports: \n       - 80:80`,
             ],
             heightContent: 171,
             widthContent: 365,
@@ -72,12 +72,10 @@ function Main() {
         },
         {
             index: 9,
-            introduction: `9. Теперь, для того чтобы посмотреть как будет в
-                prodakshen-режиме и как в режиме разработки, пропишем в
-                компоненте App.js:`,
-            command: ["<p>{`Hello, ${process.env.REACT_APP_NAME}!`}</p>"],
+            introduction: `9. Теперь, чтобы понимать какая версия запущена, пропишем в App.js:`,
+            command: ["<p>{`This is ${process.env.MODE_TYPE}!`}</p>"],
             heightContent: 17,
-            widthContent: 355,
+            widthContent: 326,
         },
     ];
 
