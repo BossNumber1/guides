@@ -1,5 +1,6 @@
 @import "./common/mixins.scss";  
 @import "./common/variables.scss";  
+@import "./tooltip.scss";  
 
 // без этой комманды данный блок затменяет большую часть страницы
 next-route-announcer {
@@ -157,29 +158,3 @@ button {
         }
     }
 }
-
-    [data-tooltip] {
-        position: relative; /* Относительное позиционирование */ 
-    }
-
-    [data-tooltip]::after {
-        content: attr(data-tooltip); /* Выводим текст */
-        position: absolute; /* Абсолютное позиционирование */
-        width: max-content; /* Ширина подсказки */
-        border-radius: 12px;
-        left: 0; top: 0; /* Положение подсказки */
-        background: #039216; 
-        color: #fff; 
-        font-size: 15px;
-        padding: 0.5em; /* Поля вокруг текста */
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
-        pointer-events: none; /* Подсказка */
-        opacity: 0; /* Подсказка невидима */
-        transition: 1s; /* Время появления подсказки */
-    } 
-
-    [data-tooltip]:hover::after {
-        opacity: 0.6; /* Показываем подсказку */
-        top: -2.5em; /* Положение подсказки */
-        left: -3.5em;
-    }
