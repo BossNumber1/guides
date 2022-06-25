@@ -4,16 +4,16 @@ import Header from "../components/Header";
 import Main from "../components/main/Main";
 import DeclarationHeader from "../DeclarationHeader";
 
-function Reacteiner() {
+function Nexteiner() {
     return (
         <>
             <DeclarationHeader
-                title="ReactJS-application dockerization guide"
-                keywords="ReactJS, docker, application, ReactJS-application dockerization"
+                title="NextJS-application dockerization guide"
+                keywords="NextJS, docker, application, NextJS-application dockerization"
             />
 
             <div className="container">
-                <Header title="Докеризация ReactJS-приложения" />
+                <Header title="Докеризация NextJS-приложения" />
                 <Main />
                 <Footer />
             </div>
@@ -21,4 +21,4 @@ function Reacteiner() {
     );
 }
 
-export default Reacteiner;
+export default Nexteiner;
