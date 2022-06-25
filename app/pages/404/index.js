@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "../../styles/not_found_page/not_found_page.module.scss";
+import Router from "next/router";
 
 function NotFoundPage() {
+    React.useEffect(() => {
+        setTimeout(() => Router.push("/"), 5000);
+    });
+
     return (
         <div className={styles.container}>
             <div className={styles.container_logo}>
