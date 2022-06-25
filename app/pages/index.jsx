@@ -45,6 +45,7 @@ export default function Home() {
             />
 
             <div className={styles.container}>
+                <div className={styles.container__title}>Гайды</div>
                 {listLinks.map((element) => {
                     return (
                         <div className={styles.container__row}>

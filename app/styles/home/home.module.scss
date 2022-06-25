@@ -4,11 +4,17 @@
 .container {
     height: 96.5vh;
     display: grid;
-    grid-template-rows: max-content max-content;
+    grid-template-rows: 180px max-content max-content;
     grid-gap: 1em;
     justify-items: center;
 
-    .container__row:nth-child(1) {
+    &__title {
+        font-size: 50px;
+        margin: 30px 0 100px 0;
+        text-transform: uppercase; 
+    }
+
+    &__row:nth-child(1) {
         margin-top: 150px;
     }
 
