@@ -3,6 +3,7 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/Header";
 import Main from "../components/main/Main";
 import DeclarationHeader from "../DeclarationHeader";
+import * as content from "../db/reactjsData";
 
 function Reacteiner() {
     return (
@@ -14,7 +15,7 @@ function Reacteiner() {
 
             <div className="container">
                 <Header title="Докеризация ReactJS-приложения" />
-                <Main />
+                <Main content={content} />
                 <Footer numberIconActive="0" />
             </div>
         </>
