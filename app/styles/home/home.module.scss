@@ -9,6 +9,7 @@
     justify-items: center;
 
     &__title {
+        font-family: 'Roboto Slab', serif;
         font-size: 50px;
         font-weight: 570;
         margin: 50px 0 100px 0;
@@ -21,16 +22,17 @@
         -webkit-background-clip: text;
     }
 
-    &__row:nth-child(1) {
-        margin-top: 150px;
-    }
-
     &__row {
         @include textCentering;
+
+        &:nth-child(1) {
+            margin-top: 150px;
+        }
 
         .container__card {
             @include selectArea;
             @include textCentering;
+            @include glow;
             width: 100px;
             height: 100px;
             margin: 0 20px;
@@ -41,10 +43,11 @@
         .container__defaultCard {
             @include selectArea;
             @include textCentering;
+            @include glow;
             width: 100px;
             height: 100px;
             margin: 0 20px;
-            background: #e4e2e2;
+            // background: #e4e2e2;
             border-radius: 10px;
         }
     }
