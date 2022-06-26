@@ -4,8 +4,6 @@ import EnumerationIcons from "../common/EnumerationIcons";
 function Footer({ numberIconActive }) {
     return (
         <div className="footer">
-            <div className="footer__signature">Устинов Дмитрий, 2022</div>
-
             <div className="footer__icons">
                 {listLinks.map((element) => {
                     return element.map((el) => {
@@ -18,6 +16,8 @@ function Footer({ numberIconActive }) {
                     });
                 })}
             </div>
+
+            <div className="footer__signature">Устинов Дмитрий, 2022</div>
         </div>
     );
 }

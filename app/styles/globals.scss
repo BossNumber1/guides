@@ -123,12 +123,15 @@ button {
 // footer
 .footer {
     // @include selectArea;
-    @include textCentering;
+    // @include textCentering;
     grid-area: footer;
 
     &__signature {
+        margin: 40px 0 20px 0;
         font-size: 12px;
         opacity: 0.6;
+        // @include selectArea;
+        @include textCentering;
     }
 
     &__icons {
@@ -152,12 +155,10 @@ button {
             // border-radius: 10px;
             // cursor: pointer;
             // margin-right: 10px;
-            border-radius: 10px;
+            
             margin-right: 20px;
             margin-left: 10px;
-            -moz-box-shadow: $glow;
-            -webkit-box-shadow: $glow;
-            box-shadow: $glow;
+            opacity: 0.5;
         }
     }
 }
