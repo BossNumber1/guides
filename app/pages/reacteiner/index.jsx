@@ -18,7 +18,11 @@ function Reacteiner() {
                     title="Докеризация ReactJS-приложения"
                     subtitle={`<b>Вместо часа</b> с лишним разбора английского видео <b>несколько минут</b> выжимки на русском`}
                 />
-                <Main content={content} readTime="1,5 минуты" />
+                <Main
+                    content={content}
+                    readTime="1,5 минуты"
+                    linkSource="https://clck.ru/r2VWw"
+                />
                 <Footer numberIconActive="0" />
             </div>
         </>

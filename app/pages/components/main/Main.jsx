@@ -4,7 +4,7 @@ import MainTitle from "./MainTitle";
 import Paragraph from "./Paragraph";
 import Source from "./Source";
 
-function Main({ content, readTime }) {
+function Main({ content, readTime, linkSource }) {
     return (
         <div className="main">
             <MainTitle readTime={readTime} />
@@ -34,7 +34,7 @@ function Main({ content, readTime }) {
                 );
             })}
 
-            <Source />
+            {linkSource && <Source linkSource={linkSource} />}
         </div>
     );
 }

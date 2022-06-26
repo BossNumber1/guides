@@ -1,12 +1,10 @@
 import React from "react";
 
-function Source() {
+function Source({ linkSource }) {
     return (
         <div className="main__source">
             Источник:
-            <a href="https://clck.ru/r2VWw">
-                Тот самый видео-урок на английском
-            </a>
+            <a href={linkSource}>Тот самый видео-урок на английском</a>
         </div>
     );
 }
