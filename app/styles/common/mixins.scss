@@ -13,3 +13,7 @@
     -webkit-box-shadow: 0 0 10px #000;
     box-shadow: 0 0 7px #000;
 }
+
+@mixin stylizedCursor {
+    cursor: url('https://clck.ru/re8zx'), pointer;
+}

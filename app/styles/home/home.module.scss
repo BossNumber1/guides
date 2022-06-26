@@ -33,10 +33,10 @@
             @include selectArea;
             @include textCentering;
             @include glow;
+            @include stylizedCursor;
             width: 100px;
             height: 100px;
             margin: 0 20px;
-            cursor: url('https://clck.ru/re8zx'), pointer;
             border-radius: 10px;
         }
 
