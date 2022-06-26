@@ -2,6 +2,7 @@ import DeclarationHeader from "./DeclarationHeader";
 import styles from "../styles/home/home.module.scss";
 import { listLinks } from "./db/listLinks";
 import EnumerationIcons from "./components/common/EnumerationIcons";
+import Typed from "react-typed";
 
 export default function Home() {
     return (
@@ -12,7 +13,9 @@ export default function Home() {
             />
 
             <div className={styles.container}>
-                <div className={styles.container__title}>Гайды</div>
+                <div className={styles.container__title}>
+                    <Typed strings={["Гайды"]} typeSpeed={150} />
+                </div>
                 {listLinks.map((element) => {
                     return (
                         <div className={styles.container__row}>
