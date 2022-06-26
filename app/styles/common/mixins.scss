@@ -9,9 +9,9 @@
 }
 
 @mixin glow {
-    -moz-box-shadow: 0 0 7px green;
-    -webkit-box-shadow: 0 0 7px green;
-    box-shadow: 0 0 7px green;
+    -moz-box-shadow: 0 0 11px #00ad00d1;
+    -webkit-box-shadow: 0 0 11px #00ad00d1;
+    box-shadow: 0 0 11px #00ad00d1;
 }
 
 @mixin stylizedCursor {

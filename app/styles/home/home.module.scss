@@ -30,7 +30,7 @@
         }
 
         .container__card {
-            @include selectArea;
+            // @include selectArea;
             @include textCentering;
             @include glow;
             @include stylizedCursor;
@@ -41,7 +41,7 @@
         }
 
         .container__defaultCard {
-            @include selectArea;
+            // @include selectArea;
             @include textCentering;
             @include glow;
             @include stylizedCursor;
