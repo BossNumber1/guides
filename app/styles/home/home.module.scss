@@ -10,11 +10,12 @@
 
     &__title {
         font-size: 50px;
-        font-weight: 550;
+        font-weight: 570;
         margin: 50px 0 100px 0;
         text-transform: uppercase; 
         height: 100px;
-        background-image: conic-gradient(black, gray, black);
+        // background-image: conic-gradient(gray, black, black, black, gray, black, gray, black);
+        background: linear-gradient(to bottom right, gray, green, black);
         color: transparent;
         background-clip: text;
         -webkit-background-clip: text;
