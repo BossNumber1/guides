@@ -132,6 +132,11 @@ button {
         opacity: 0.6;
         // @include selectArea;
         @include textCentering;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
     }
 
     &__icons {

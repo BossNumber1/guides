@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { listLinks } from "../../db/listLinks";
 import EnumerationIcons from "../common/EnumerationIcons";
 
@@ -17,7 +18,11 @@ function Footer({ numberIconActive }) {
                 })}
             </div>
 
-            <div className="footer__signature">Устинов Дмитрий, 2022</div>
+            <div className="footer__signature">
+                <Link href="https://t.me/moyustimov">
+                    Устинов Дмитрий, 2022
+                </Link>
+            </div>
         </div>
     );
 }
