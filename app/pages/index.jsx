@@ -1,7 +1,7 @@
 import DeclarationHeader from "./DeclarationHeader";
 import styles from "../styles/home/home.module.scss";
-import Link from "next/link";
 import { listLinks } from "./db/listLinks";
+import EnumerationIcons from "./components/common/EnumerationIcons";
 
 export default function Home() {
     return (
@@ -18,22 +18,7 @@ export default function Home() {
                         <div className={styles.container__row}>
                             {element.map((el) => {
                                 return (
-                                    <div
-                                        key={el.index}
-                                        className={
-                                            el.pathToPage !== ""
-                                                ? styles.container__card
-                                                : styles.container__defaultCard
-                                        }
-                                        data-tooltip={el.tooltip && el.tooltip}
-                                    >
-                                        <Link href={el.pathToPage}>
-                                            <img
-                                                src={el.iconLink}
-                                                alt={el.alt}
-                                            />
-                                        </Link>
-                                    </div>
+                                    <EnumerationIcons el={el} styles={styles} />
                                 );
                             })}
                         </div>

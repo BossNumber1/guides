@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { listLinks } from "../../db/listLinks";
+import EnumerationIcons from "../common/EnumerationIcons";
 
 function Footer({ numberIconActive }) {
     return (
@@ -10,18 +10,10 @@ function Footer({ numberIconActive }) {
                 {listLinks.map((element) => {
                     return element.map((el) => {
                         return (
-                            <div
-                                data-tooltip={el.tooltip}
-                                className={
-                                    +numberIconActive === el.index - 1
-                                        ? "footer__icon footer__icon_active"
-                                        : "footer__icon"
-                                }
-                            >
-                                <Link href={el.pathToPage}>
-                                    <img src={el.iconLink} alt={el.alt} />
-                                </Link>
-                            </div>
+                            <EnumerationIcons
+                                el={el}
+                                numberIconActive={numberIconActive}
+                            />
                         );
                     });
                 })}
