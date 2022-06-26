@@ -1,8 +1,8 @@
 import React from "react";
 
-function MainTitle() {
+function MainTitle({ readTime }) {
     return (
-        <div className="main__title">Среднее время прочтения: 1,5 минуты</div>
+        <div className="main__title">Среднее время прочтения: {readTime}</div>
     );
 }
 

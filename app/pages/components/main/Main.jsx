@@ -4,10 +4,10 @@ import MainTitle from "./MainTitle";
 import Paragraph from "./Paragraph";
 import Source from "./Source";
 
-function Main({ content }) {
+function Main({ content, readTime }) {
     return (
         <div className="main">
-            <MainTitle />
+            <MainTitle readTime={readTime} />
 
             {content.ParagraphContent.map((el) => {
                 return (

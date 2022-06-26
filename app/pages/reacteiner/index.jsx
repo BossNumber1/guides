@@ -15,7 +15,7 @@ function Reacteiner() {
 
             <div className="container">
                 <Header title="Докеризация ReactJS-приложения" />
-                <Main content={content} />
+                <Main content={content} readTime="1,5 минуты" />
                 <Footer numberIconActive="0" />
             </div>
         </>
