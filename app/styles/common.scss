@@ -34,9 +34,7 @@ body {
 
 button {
     border: none;
-    // cursor: pointer;
-        cursor: url('https://clck.ru/re8zx'), pointer;
-
+    cursor: url('https://clck.ru/re8zx'), pointer;
 }
 
 // header
@@ -148,28 +146,26 @@ button {
         margin-left: 20px;
 
         .footer__icon {
-            // cursor: pointer;
-                cursor: url('https://clck.ru/re8zx'), pointer;
+            cursor: url('https://clck.ru/re8zx'), pointer;
 
             // margin-right: 10px;
-             margin-right: 15px;
+            margin-right: 15px;
             // margin-left: 10px;
             // opacity: 0.4;
-        }
 
-        .footer__icon_active {
-            // opacity: 1;
-            // cursor: default;
-            padding: 5px 15px 5px 15px;
-            pointer-events: none;
-            // border: 2px solid #039216;
-            // border-radius: 10px;
-            // cursor: pointer;
-            // margin-right: 10px;
-            
-            margin-right: 20px;
-            margin-left: 10px;
-            opacity: 0.5;
+            &_active {
+                // opacity: 1;
+                // cursor: default;
+                padding: 5px 15px 5px 15px;
+                pointer-events: none;
+                // border: 2px solid #039216;
+                // border-radius: 10px;
+                // margin-right: 10px;
+                
+                margin-right: 20px;
+                margin-left: 10px;
+                opacity: 0.5;
+            }
         }
     }
 }
